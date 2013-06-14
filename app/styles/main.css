@@ -3,24 +3,37 @@ body {
     background: url("/images/backgrounds/grey.webp") #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #1f1f1f;
+    font-size:13px;
 }
 
 .grid {
   /*  As of August 2012, only supported in Chrome 21+ and firefox 24+*/
  display: -webkit-flex;
  display: flex;
- height:5000px;
+ flex-flow: row wrap;
+ -webkit-flex-flow: row wrap;
+ height:100%;
 }
 .col {
-  background: #ccc;
-  
+  flex:1 0px;
+  -webkit-flex:1 0px;
 }
+
 .fluid {
 	flex: 1;
+	-webkit-flex: 1;
 }
 .fixed {
-	
- 
+	flex:0;
+	-webkit-flex:0;
+}
+.colEmail{
+  flex:0 380px;
+  -webkit-flex:0 380px;
+}
+.pure-menu.pure-menu-open{
+  background:rgba(255,255,255,.6);
+  color:#F1F1F1;
 }
 .pure-menu-open>ul{text-align: left;}
 .issues-nav {
@@ -31,7 +44,9 @@ body {
   padding: 2em 0;
   overflow:hidden;
   overflow-y:auto;
+  position:fixed;
 }
 .nav-inner{
   height:100%;
 }
+

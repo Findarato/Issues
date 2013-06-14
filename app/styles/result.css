@@ -125,7 +125,7 @@ body,
 html {
   margin: 0px;
   padding: 0px;
-  height: 105%;
+  height: 100%;
   color: #1d1d1d;
   font-size: 13px;
 }
@@ -246,6 +246,14 @@ h4 {
   white-space: nowrap;
 }
 /*Issues*/
+.email-item {
+  position: relative;
+}
+.email-item .tags {
+  position: absolute;
+  bottom: .1em;
+  right: .5em;
+}
 /*Testing something*/
 [class^="icon-"],
 [class*=" icon-"] {
