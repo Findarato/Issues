@@ -6,7 +6,8 @@
     "modernizr": "~2.6.2",
     "jquery": "~2.0.0",
     "pure": "~0.2.0",
-    "jquery-indexeddb": "~0.1.0"
+    "jquery-indexeddb": "~0.1.0",
+    "jquery-ui": "~1.10.3"
   },
   "devDependencies": {}
 }

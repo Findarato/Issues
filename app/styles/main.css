@@ -1,6 +1,37 @@
+
 body {
     background: url("/images/backgrounds/grey.webp") #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #1f1f1f;
 }
 
+.grid {
+  /*  As of August 2012, only supported in Chrome 21+ and firefox 24+*/
+ display: -webkit-flex;
+ display: flex;
+ height:5000px;
+}
+.col {
+  background: #ccc;
+  
+}
+.fluid {
+	flex: 1;
+}
+.fixed {
+	
+ 
+}
+.pure-menu-open>ul{text-align: left;}
+.issues-nav {
+  width: 150px;
+  height:100%;
+  background: rgb(37, 42, 58);
+  text-align: center;
+  padding: 2em 0;
+  overflow:hidden;
+  overflow-y:auto;
+}
+.nav-inner{
+  height:100%;
+}
