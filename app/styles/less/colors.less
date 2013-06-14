@@ -1,0 +1,207 @@
+.downShadow(@color:@shadow){
+  .shadowOut(0,6px,7px,-3px,@color);
+}
+.dropShadow(@color:@shadow){
+  -webkit-box-shadow: -4px 7px 6px 0px @color;
+  box-shadow: -4px 7px 6px 0px @color;
+}
+.oneEdgeShadow(@color:@shadow){
+  .shadowOut(0,8px,6px,-6px,@color); 
+}
+.textShadowIndent(@color:@shadow){ 
+  text-shadow: 0 1px 1px @color;
+}
+.shadowIn (@x: 0, @y: 0, @blur: 1px,@distance:1px, @color: rgba(0,0,0,.8)) {
+  box-shadow:inset @arguments;
+  -moz-box-shadow:inset @arguments;
+  -webkit-box-shadow:inset @arguments;
+}
+.shadowOutText (@x: 0, @y: 0, @blur: 1px, @color: rgba(0,0,0,.8)) {
+  text-shadow: @arguments;
+  -moz-text-shadow: @arguments;
+  -webkit-text-shadow: @arguments;
+}
+.shadowOut (@x: 0, @y: 0, @blur: 1px,@distance:1px, @color: rgba(0,0,0,.8)) {
+  box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments; 
+}
+.newShadow(){
+    -webkit-box-shadow: 0 5px 10px @shadow;
+    -moz-box-shadow: 0 5px 10px @shadow;
+    box-shadow: 0 5px 10px @shadow; 
+}
+.Animate(@time:500ms){
+  -webkit-transition: all @time linear;
+     -moz-transition: all @time linear;
+      -ms-transition: all @time linear;
+       -o-transition: all @time linear;
+          transition: all @time linear; 
+}
+.FancyAnimate(){
+  -webkit-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+     -moz-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+      -ms-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+       -o-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+          transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+  
+  -webkit-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+     -moz-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+      -ms-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+       -o-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+          transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */ 
+}
+
+.smoothAnimate{ 
+  .FancyAnimate();
+}
+.grow(@px:1.1){
+  -webkit-transform:scale(@px);
+  -moz-transform:scale(@px);
+  -o-transform:scale(@px);
+  -ms-transform:scale(@px);
+  transform:scale(@px);
+}
+.Translate(@x:0,@y:0){
+  transform:translate(@x,@y);
+  -ms-transform:translate(@x,@y); /* IE 9 */
+  -moz-transform:translate(@x,@y); /* Firefox */
+  -webkit-transform:translate(@x,@y); /* Safari and Chrome */
+  -o-transform:translate(@x,@y); /* Opera */
+}
+.softColor(@color){
+  background: @color; /* Old browsers */
+  background: -moz-linear-gradient(top, @color 0%, darken(saturate(@color,16%),5%) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color), color-stop(100%,darken(saturate(@color,16%),5%))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, @color 0%,darken(saturate(@color,16%),5%) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, @color 0%,darken(saturate(@color,16%),5%) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, @color 0%,darken(saturate(@color,16%),5%) 100%); /* IE10+ */
+  background: linear-gradient(top, @color 0%,darken(saturate(@color,16%),5%) 100%); /* W3C */
+} 
+.rotate(@deg){
+  -webkit-transform: rotate(@deg); 
+  -moz-transform: rotate(@deg); 
+  -o-transform:rotate(@deg); 
+  -ms-transform:rotate(@deg);
+  transform:rotate(@deg);
+}
+ 
+@white:rgb(255,255,255);
+@color1:rgb(204,255,255);/*ccffff hsl(180, 100%, 90%)*/
+@color2:rgb(221,238,204);/*d3eecc hsl(108, 50%, 87%)*/
+@color3:rgb(85,102,68); /*556644 hsl(90, 20%, 33%)*/
+@color4:rgb(231,242,230);/*e7f2e6 hsl(115, 32%, 93%)*/
+@color5:rgb(95,62,18);/*5f3e12 hsl(34, 68%, 22%)*/
+@colorDark: rgb(29,29,29);
+@colorLight: rgb(241,241,241);
+@shadow:rgba(36, 36, 36,.3);
+@borderColor: rgb(170,170,170);
+@button:rgb(240,240,240);
+@buttonBorder:rgb(170,170,170);
+
+
+// Winter CSS 
+//@color1:rgb(204,238,255);
+//@color2:rgb(205,227,238);
+//@color3:rgb(68,91,102);
+//@color4:rgb(221,233,239);  
+//@color5:rgb(17,69,95);
+
+/*Joe's Holo adaptation*/
+/*
+@white:rgb(35,31,32);
+@colorLight:rgb(68,68,68);
+@shadow:rgba(65,65,65,.3);
+@colorDark:rgb(255,255,255);
+@color1:rgb(51,181,229);
+@color2:rgb(0,153,204);
+@color3:rgb(51,181,229);
+@color4:rgb(45,45,45);
+@color5:rgb(0,153,204);
+*/
+
+//http://kuler.adobe.com/index.cfm#themeID/1855100 
+
+//@color1:rgb(196,109,59);
+//@color2:rgb(227,203,173);
+//@color3:rgb(156,153,133);
+//@color4:rgb(120,136,128);
+//@color5:rgb(50,70,84);
+
+
+//http://kuler.adobe.com/#themeID/1878614
+//@color1:rgb(214,194,116);
+//@color2:rgb(219,158,70);
+//@color3:rgb(37,112,107);
+//@color4:lighten(rgb(61,36,35),30%);
+//@color5:rgb(171,54,46);
+
+
+//http://kuler.adobe.com/#themeID/1607986
+//@color1:rgb(188,0,25);
+//@color2:rgb(222,78,78);
+//@color3:rgb(0,0,90);
+//@color4:rgb(163,209,250);
+//@color5:rgb(94,147,229);
+
+
+//Global adjustments
+@color160:fadeout(@color1,40%);
+@color260:fadeout(@color2,40%);
+@color360:fadeout(@color3,40%);
+@color460:fadeout(@color4,40%);
+@color560:fadeout(@color5,40%);
+@borderColor60: fadeout(@borderColor,40%);
+@colorDark60:fadeout(@colorDark,40%);
+@colorLight60: fadeout(@colorLight,40%);
+
+/* Color 1 related items */
+.color1{
+  background: @color1;  
+}
+/* Color 2 related items */
+.color2,.color260{
+  background: @color2;
+  a{
+   color: @colorLight;  
+  }
+}
+/* Color 3 related items */
+.color3{
+  background: @color3;
+  color: @colorLight;
+  a{
+    color: @colorLight;
+  }
+}
+/* Color 4 related items */
+.color4,.mainBackground{
+  background:@color4;
+}
+.color460{
+  background:@color460;
+}
+.color4Soft{
+  .softColor(@color4);
+}
+.color4TextGlow{
+  text-shadow: @color4 0 0 2px;
+}
+.color4Border1{
+  border:1px solid @color4;
+}
+/* Color 5 related items */
+.color5{
+  color:@colorLight;
+  background:@color5;
+}
+.color560{
+  color:@colorLight;
+  background:@color560;
+}
+.color5TextGlow{
+  text-shadow: @color5 0 0 2px;
+}
+.color5Circle:hover{
+ .shadowOut (0,0,.2em,0em,@color5);  
+}

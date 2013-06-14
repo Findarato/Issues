@@ -1,0 +1,16 @@
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+.roundAll2 {
+ .rounded-corners(2px); 
+}
+.roundAll3 {
+ .rounded-corners(3px);
+}
+.round-corners-sn(@tl,@tr,@br,@bl){
+  border-radius:@tl @tr @br @bl;
+  -webkit-border-radius:@tl @tr @br @bl;
+}
+.roundBottom3 {.round-corners-sn(0,0,3px,3px);}
+.roundBottomLeft3 { .round-corners-sn(0,0,0,3px);}

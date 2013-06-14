@@ -15,7 +15,7 @@ var mountFolder = function (connect, dir) {
 module.exports = function (grunt) {
     // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
+    grunt.loadNpmTasks('grunt-contrib-less');
     // configurable paths
     var yeomanConfig = {
         app: 'app',
@@ -24,22 +24,34 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         yeoman: yeomanConfig,
+
+
+less: {
+  development: {
+    options: {
+      paths: ["<%= yeoman.app %>/styles/less"]
+    },
+    files: {
+      "<%= yeoman.app %>/styles/result.css": '<%= yeoman.app %>/styles/less/layout.less'
+//      "<%= yeoman.app %>/styles/result.css": '<%= yeoman.app %>/styles/less/mq.less'
+    }
+  }
+},
+
+
         watch: {
+	    less:{
+                 files: ['<%= yeoman.app %>/styles/less/*.less'],
+                 tasks:'less'
+                 
+            },
             options: {
                 nospawn: true
             },
-            coffee: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-                tasks: ['coffee:dist']
-            },
-            coffeeTest: {
-                files: ['test/spec/{,*/}*.coffee'],
-                tasks: ['coffee:test']
-            },
-            compass: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass:server']
-            },
+//            compass: {
+//                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+//                tasks: ['compass:server']
+//            },
             livereload: {
                 options: {
                     livereload: LIVERELOAD_PORT
@@ -146,6 +158,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
+/*
         compass: {
             options: {
                 sassDir: '<%= yeoman.app %>/styles',
@@ -167,6 +180,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+*/
         // not used since Uglify task does concat,
         // but still available if needed
         /*concat: {
@@ -293,16 +307,16 @@ module.exports = function (grunt) {
         },
         concurrent: {
             server: [
-                'coffee:dist',
+//                'coffee:dist',
                 'compass:server'
             ],
             test: [
-                'coffee',
-                'compass'
+//                'coffee'
+  //              'compass'
             ],
             dist: [
-                'coffee',
-                'compass:dist',
+  //              'coffee',
+  //              'compass:dist',
                 'imagemin',
                 'svgmin',
                 'htmlmin'
