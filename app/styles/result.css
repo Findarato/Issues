@@ -249,6 +249,11 @@ h4 {
 .email-item {
   position: relative;
 }
+.email-item .email-content-controls {
+  position: absolute;
+  top: -1em;
+  right: 2em;
+}
 .email-item .tags {
   position: absolute;
   bottom: .1em;
