@@ -21,7 +21,6 @@ module.exports = function (grunt) {
         app: 'app',
         dist: 'dist'
     };
-
     grunt.initConfig({
         yeoman: yeomanConfig,
 
@@ -37,8 +36,6 @@ less: {
     }
   }
 },
-
-
         watch: {
 	    less:{
                  files: ['<%= yeoman.app %>/styles/less/*.less'],
@@ -66,7 +63,7 @@ less: {
         },
         connect: {
             options: {
-                port: 9000,
+                port: 8000,
                 // change this to '0.0.0.0' to access the server from outside
                 hostname: 'localhost'
             },
